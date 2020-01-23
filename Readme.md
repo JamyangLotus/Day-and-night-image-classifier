@@ -29,6 +29,25 @@ We set two variables to store the directory path for training images and test im
 training_file = 'day_night_images/training/'
 testing_file = 'day_night_images/test/'
 ```
+## Load training images from path:'day_night_images/training/'
+
+```python
+IMAGE_LIST = helpers.load_dataset(training_file)
+STANDARDIZE_IMAGE_LIST = helpers.standardize_list(IMAGE_LIST)
+```
+
+## Function for calculating the average brightness of an image
+
+```python
+def avg_brightness(image):
+  hsv = cv2.cvtColor(image,cv2.COLOR_BGR2HSV)
+  sum_brightness = np.sum(hsv[:,:,:]
+  area = 600*1100
+  
+  avg = sum_brightness/area
+  
+  return avg
+```
 
 
 
