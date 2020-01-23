@@ -7,7 +7,7 @@ We'd like to build a classifier that can accurately label these images as day or
 
 Note: All images come from the AMOS dataset (Archive of Many Outdoor Scenes).
 
-##Import resources
+## Import resources
 Before you get started on the project code, import the libraries and resources that you'll need.
 
 ```python
