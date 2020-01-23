@@ -52,6 +52,25 @@ def avg_brightness(image):
   return avg
 ```
 
+## Classification and Visualizing Error
+In this section, we'll turn our average brightness feature into a classifier that takes in a standardized image and returns a predicted_label for that image. This estimate_label function should return a value: 0 or 1 (night or day, respectively).
 
+```python
+# This function should take in RGB image input
+def estimate_label(rgb_image):
+    
+    # Extract average brightness feature from an RGB image 
+    avg = avg_brightness(rgb_image)
+        
+    # Use the avg brightness feature to predict a label (0, 1)
+    predicted_label = 0
+    threshold = 99
+    if(avg > threshold):
+        # if the average brightness is above the threshold value, we classify it as "day"
+        predicted_label = 1
+    # else, the predicted_label can stay 0 (it is predicted to be "night")
+    
+    return predicted_label    
+  ```
 
 
