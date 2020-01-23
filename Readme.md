@@ -35,8 +35,11 @@ testing_file = 'day_night_images/test/'
 IMAGE_LIST = helpers.load_dataset(training_file)
 STANDARDIZE_IMAGE_LIST = helpers.standardize_list(IMAGE_LIST)
 ```
+## Feature Extraction
 
-## Function for calculating the average brightness of an image
+Create a feature that represents the brightness in an image. We'll be extracting the average brightness using HSV colorspace. Specifically, we'll use the V channel (a measure of brightness), add up the pixel values in the V channel, then divide that sum by the area of the image to get the average Value of the image
+
+### Function for calculating the average brightness of an image
 
 ```python
 def avg_brightness(image):
