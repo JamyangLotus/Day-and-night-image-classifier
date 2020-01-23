@@ -72,5 +72,74 @@ def estimate_label(rgb_image):
     
     return predicted_label    
   ```
+  
+## Testing the classifier
+Here is where we test your classification algorithm using our test set of data that we set aside at the beginning of the notebook!
+
+Since we are using a pretty simple brightess feature, we may not expect this classifier to be 100% accurate. We'll aim for around 75-85% accuracy usin this one feature.
+
+### Test dataset
+Below, we load in the test dataset, standardize it using the standardize function you defined above, and then shuffle it; this ensures that order will not play a role in testing accuracy.Testing the classifier
+Here is where we test your classification algorithm using our test set of data that we set aside at the beginning of the notebook!
+
+Since we are using a pretty simple brightess feature, we may not expect this classifier to be 100% accurate. We'll aim for around 75-85% accuracy usin this one feature.
+
+### Test dataset
+Below, we load in the test dataset, standardize it using the standardize function you defined above, and then shuffle it; this ensures that order will not play a role in testing accuracy.
+
+```python
+import random
+
+# Using the load_dataset function in helpers.py
+# Load test data
+TEST_IMAGE_LIST = helpers.load_dataset(image_dir_test)
+
+# Standardize the test data
+STANDARDIZED_TEST_LIST = helpers.standardize(TEST_IMAGE_LIST)
+
+# Shuffle the standardized test data
+random.shuffle(STANDARDIZED_TEST_LIST)
+```
+
+## Determine the Accuracy
+Compare the output of your classification algorithm (a.k.a. your "model") with the true labels and determine the accuracy.
+
+This code stores all the misclassified images, their predicted labels, and their true labels, in a list called misclassified.
+
+```python
+def get_misclassified_images(test_images):
+    # Track misclassified images by placing them into a list
+    misclassified_images_labels = []
+
+    # Iterate through all the test images
+    # Classify each image and compare to the true label
+    for image in test_images:
+
+        # Get true data
+        im = image[0]
+        true_label = image[1]
+
+        # Get predicted label from your classifier
+        predicted_label = estimate_label(im)
+
+        # Compare true and predicted labels 
+        if(predicted_label != true_label):
+            # If these labels are not equal, the image has been misclassified
+            misclassified_images_labels.append((im, predicted_label, true_label))
+            
+    # Return the list of misclassified [image, predicted_label, true_label] values
+    return misclassified_images_labels
 
 
+# Find all misclassified images in a given test set
+MISCLASSIFIED = get_misclassified_images(STANDARDIZED_TEST_LIST)
+
+# Accuracy calculations
+total = len(STANDARDIZED_TEST_LIST)
+num_correct = total - len(MISCLASSIFIED)
+accuracy = num_correct/total
+
+print('Accuracy: ' + str(accuracy))
+print("Number of misclassified images = " + str(len(MISCLASSIFIED)) +' out of '+ str(total))
+
+'''
