@@ -20,8 +20,8 @@ import matplotlib.pyplot as plt
 ## Training and Testing data
 From 200 images of day/night we will separate them for training and testing.
 
-*60% of them will be used for training images, for creating a classifier.
-*40% of them will be used for testing images, for calculating the accuracy of our classifier.
+* 60% of them will be used for training images, for creating a classifier.
+* 40% of them will be used for testing images, for calculating the accuracy of our classifier.
 
 We set two variables to store the path of directory of training and testing images separately.
 
