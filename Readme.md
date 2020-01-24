@@ -129,17 +129,19 @@ def get_misclassified_images(test_images):
             
     # Return the list of misclassified [image, predicted_label, true_label] values
     return misclassified_images_labels
-
+```
 
 # Find all misclassified images in a given test set
+```python
 MISCLASSIFIED = get_misclassified_images(STANDARDIZED_TEST_LIST)
+```
 
 # Accuracy calculations
+```python
 total = len(STANDARDIZED_TEST_LIST)
 num_correct = total - len(MISCLASSIFIED)
 accuracy = num_correct/total
 
 print('Accuracy: ' + str(accuracy))
 print("Number of misclassified images = " + str(len(MISCLASSIFIED)) +' out of '+ str(total))
-
-'''
+```
