@@ -76,7 +76,7 @@ def estimate_label(rgb_image):
 ## Testing the classifier
 Here is where we test your classification algorithm using our test set of data that we set aside at the beginning of the notebook!
 
-Since we are using a pretty simple brightess feature, we may not expect this classifier to be 100% accurate. We'll aim for around 75-85% accuracy usin this one feature.
+Since we are using a pretty simple brightess feature, we may not expect this classifier to be 100% accurate. We'll aim for around 75-85% accuracy using this one feature.
 
 ### Test dataset
 Below, we load in the test dataset, standardize it using the standardize function you defined above, and then shuffle it; this ensures that order will not play a role in testing accuracy.Testing the classifier
