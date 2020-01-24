@@ -95,7 +95,7 @@ import random
 TEST_IMAGE_LIST = helpers.load_dataset(image_dir_test)
 
 # Standardize the test data
-STANDARDIZED_TEST_LIST = helpers.standardize(TEST_IMAGE_LIST)
+STANDARDIZED_TEST_LIST = helpers.standardize_list(TEST_IMAGE_LIST)
 
 # Shuffle the standardized test data
 random.shuffle(STANDARDIZED_TEST_LIST)
