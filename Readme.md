@@ -131,12 +131,12 @@ def get_misclassified_images(test_images):
     return misclassified_images_labels
 ```
 
-# Find all misclassified images in a given test set
+## Find all misclassified images in a given test set
 ```python
 MISCLASSIFIED = get_misclassified_images(STANDARDIZED_TEST_LIST)
 ```
 
-# Accuracy calculations
+## Accuracy calculations
 ```python
 total = len(STANDARDIZED_TEST_LIST)
 num_correct = total - len(MISCLASSIFIED)
